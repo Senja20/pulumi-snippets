@@ -1,21 +1,27 @@
-on: [push]
+name: Publish VSCode Extension
 
-name: Deploy Extension
+on:
+  push:
+    branches:
+      - main
+
+env:
+  VSCODE_EXT_PUBLISH_TOKEN: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: npm install
-      - name: Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
-      - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Publish VSCode extension
+      uses: actions/npm@v1
+      with:
+        args: publish
+      env:
+        NODE_AUTH_TOKEN: ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
+
+          
+          
