@@ -23,9 +23,9 @@ jobs:
 
     - name: Publish VSCode extension
       run: |
-        npm login --registry=https://marketplace.visualstudio.com --scope=@yauhenyavorski
-        echo "//marketplace.visualstudio.com/:_authToken=$VSCODE_EXT_PUBLISH_TOKEN" > .npmrc
-        npm publish
+        npm install @vscode/vsce
+        vsce package
+        vsce publish -p ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
       env:
         NODE_AUTH_TOKEN: ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
 
