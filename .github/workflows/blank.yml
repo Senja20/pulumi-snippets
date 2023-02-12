@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  VSCODE_EXT_PUBLISH_TOKEN: ${{ secrets.OPEN_VSX_TOKEN }}
+  VSCODE_EXT_PUBLISH_TOKEN: ${{ secrets.VS_MARKETPLACE_TOKEN }}
 
 jobs:
   publish:
