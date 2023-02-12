@@ -145,11 +145,34 @@
         "description": "Create a new GitHub repository branch protection"
     },
     "pulumi-get-user": {
-        "prefix": ["pugu", "pulumi-get-user", "pulumi-user"],
+        "prefix": ["pugu", "pulumi-get-user-github", "pulumi-github-user"],
         "body": [
             "// Get the specified user",
             "const user = github.getUser({username: \"$1\"});",
         ],
         "description": "Get the current user"
+    },
+    "pulumi-get-user-import": {
+        "prefix": ["pugui", "pulumi-get-user-import", "pulumi-github-user-import"],
+        "body": [
+            "import * as github from \"@pulumi/github\";",
+            "",
+            "// Get the specified user",
+            "const user = github.getUser({username: \"$1\"});",
+        ],
+        "description": "Get the current user template with adding necessary imports at the top"
+    },
+    "pulumi-azure-create-provider": {
+        "prefix": ["puazp", "pulumi-azure-create-provider", "pulumi-azure-provider", "pulumi-azure-provider-create"],
+        "body": [
+            "// Create a new Azure provider",
+            "const azureProvider = new azure.Provider(\"Provider name here\", {",
+            "    subscriptionId: \"$1\",",
+            "    tenantId: \"$1\",",
+            "    clientId: \"$1\",",
+            "    clientSecret: \"$0\",",
+            "});",
+        ],
+        "description": "Create a new Azure provider"
     },
 }
