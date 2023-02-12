@@ -1,9 +1,6 @@
 # Change Log
 
-All notable changes to the "pulumi-snippets" extension will be documented in this file.
+Adding the following commands:
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- pugui:  pulumi github.getUser template with imports
+- puazp: pulumi azure provider
