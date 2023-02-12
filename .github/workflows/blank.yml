@@ -19,15 +19,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 14
+        node-version: 16
 
     - name: Publish VSCode extension
       run: |
+        npm install 
         npm install @vscode/vsce
         vsce package
         vsce publish -p ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
-      env:
-        NODE_AUTH_TOKEN: ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
 
           
           
