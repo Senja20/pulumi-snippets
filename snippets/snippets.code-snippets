@@ -146,6 +146,33 @@
         ],
         "description": "Get the current user template with adding necessary imports at the top"
     },
+    "pulumi-create-github-branch": {
+        "prefix": ["pugb", "pulumi-create-github-branch", "pulumi-github-branch"],
+        "body": [
+            "// Create a new GitHub branch",
+            "const branch = new github.Branch(\"$1\", {",
+            "    repository: $2.name,",
+            "    branch: \"$1\",",
+            "    sourceBranch: \"$1\",",
+            "}, { dependsOn: [$2] });",
+        ],
+        "description": "Create a new GitHub branch"
+    },
+    "pulumi-create-github-branch-imports": {
+        "prefix": ["pugbi", "pulumi-create-github-branch-imports", "pulumi-github-branch-imports"],
+        "body": [
+            "import * as github from \"@pulumi/github\";",
+            "import * as pulumi from \"@pulumi/pulumi\";",
+            "",
+            "// Create a new GitHub branch",
+            "const branch = new github.Branch(\"$1\", {",
+            "    repository: $2.name,",
+            "    branch: \"$1\",",
+            "    sourceBranch: \"$0\",",
+            "}, { dependsOn: [$2] });",
+        ],
+        "description": "Create a new GitHub branch template with adding necessary imports at the top"
+    },
     "pulumi-azure-create-provider": {
         "prefix": ["puazp", "pulumi-azure-create-provider", "pulumi-azure-provider", "pulumi-azure-provider-create"],
         "body": [
