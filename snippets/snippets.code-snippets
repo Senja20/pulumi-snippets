@@ -6,8 +6,8 @@
             "import * as pulumi from \"@pulumi/pulumi\";",
             "",
             "// Create a new GitHub repository",
-            "const repo = new github.Repository($1, {",
-            "    name: \"$2:new-repo\",",
+            "const repo = new github.Repository(\"$1:repo-name\", {",
+            "    name: \"$1:new-repo\",",
             "    description: \"A new repository\",",
             "    private: true,",
             "    allowMergeCommit: true,",
@@ -23,7 +23,6 @@
             "    gitignoreTemplate: \"Node\",",
             "    licenseTemplate: \"mit\",",
             "    vulnerabilityAlerts: true,",
-            "    organization: org,",
             "});",
         ],
         "description": "Create a new GitHub repository"
