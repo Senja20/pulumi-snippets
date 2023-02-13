@@ -251,4 +251,20 @@
         ],
         "description": "Create a new Azure provider"
     },
+    "pulumi-azure-create-provider-imports": {
+        "prefix": ["puazpi", "pulumi-azure-create-provider-imports", "pulumi-azure-provider-imports", "pulumi-azure-provider-create-imports"],
+        "body": [
+            "import * as azure from \"@pulumi/azure\";",
+            "import * as pulumi from \"@pulumi/pulumi\";",
+            "",
+            "// Create a new Azure provider",
+            "const azureProvider = new azure.Provider(\"Provider name here\", {",
+            "    subscriptionId: \"$1\",",
+            "    tenantId: \"$1\",",
+            "    clientId: \"$1\",",
+            "    clientSecret: \"$0\",",
+            "});",
+        ],
+        "description": "Create a new Azure provider template with adding necessary imports at the top"
+    },
 }
