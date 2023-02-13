@@ -15,5 +15,9 @@ The extension provides extension for the most common Pulumi code. The snippets c
 - pugui:  pulumi github.getUser template with imports
 - pugbi: pulumi add Github Branch with necessary imports
 
+### Docker
+- pudci: pulumi add docker image
+- pudcii: pulumi add docker image with necessary imports
+
 ### Azure
 - puazp: pulumi azure provider
