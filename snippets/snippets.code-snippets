@@ -204,6 +204,41 @@
         ],
         "description": "Create a new Docker image template with adding necessary imports at the top"
     },
+    "pulumi-docker-container-create": {
+        "prefix": ["pudcc", "pulumi-docker-container-create", "pulumi-docker-container", "pulumi-docker-container-create"],
+        "body": [
+            "// Create a new Docker container",
+            "const container = new docker.Container(\"$1\", {",
+            "    image: $2.imageName,",
+            "    name: \"$1\",",
+            "    ports: [{",
+            "        internal: 80,",
+            "        external: 80,",
+            "    }],",
+            "    restart: \"always\",",
+            "}, { dependsOn: [$2] });",
+        ],
+        "description": "Create a new Docker container"
+    },
+    "pulumi-docker-container-create-imports": {
+        "prefix": ["pudcci", "pulumi-docker-container-create-imports", "pulumi-docker-container-imports", "pulumi-docker-container-create-imports"],
+        "body": [
+            "import * as docker from \"@pulumi/docker\";",
+            "import * as pulumi from \"@pulumi/pulumi\";",
+            "",
+            "// Create a new Docker container",
+            "const container = new docker.Container(\"$1\", {",
+            "    image: $2.imageName,",
+            "    name: \"$1\",",
+            "    ports: [{",
+            "        internal: 80,",
+            "        external: 80,",
+            "    }],",
+            "    restart: \"always\",",
+            "}, { dependsOn: [$2] });",
+        ],
+        "description": "Create a new Docker container template with adding necessary imports at the top"
+    },
     "pulumi-azure-create-provider": {
         "prefix": ["puazp", "pulumi-azure-create-provider", "pulumi-azure-provider", "pulumi-azure-provider-create"],
         "body": [
