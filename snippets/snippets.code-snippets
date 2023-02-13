@@ -172,6 +172,37 @@
             "}, { dependsOn: [$2] });",
         ],
         "description": "Create a new GitHub branch template with adding necessary imports at the top"
+    }, 
+    "pulumi-docker-create-image": {
+        "prefix": ["pudci", "pulumi-docker-create-image", "pulumi-docker-image", "pulumi-docker-image-create"],
+        "body": [
+            "// Create a new Docker image",
+            "const image = new docker.Image(\"$1\", {",
+            "    imageName: \"$2\",",
+            "    build: {",
+            "        context:  `${process.cwd()}/$1`",
+            "        dockerfile:  `${process.cwd()}/$1/Dockerfile`,",
+            "    },",
+            "}, { dependsOn: [$0] });",
+        ],
+        "description": "Create a new Docker image"
+    },
+    "pulumi-docker-create-image-imports": {
+        "prefix": ["pudcii", "pulumi-docker-create-image-imports", "pulumi-docker-image-imports", "pulumi-docker-image-create-imports"],
+        "body": [
+            "import * as docker from \"@pulumi/docker\";",
+            "import * as pulumi from \"@pulumi/pulumi\";",
+            "",
+            "// Create a new Docker image",
+            "const image = new docker.Image(\"$1\", {",
+            "    imageName: \"$2\",",
+            "    build: {",
+            "        context:  `${process.cwd()}/$1`",
+            "        dockerfile:  `${process.cwd()}/$1/Dockerfile`,",
+            "    },",
+            "}, { dependsOn: [$0] });",
+        ],
+        "description": "Create a new Docker image template with adding necessary imports at the top"
     },
     "pulumi-azure-create-provider": {
         "prefix": ["puazp", "pulumi-azure-create-provider", "pulumi-azure-provider", "pulumi-azure-provider-create"],
