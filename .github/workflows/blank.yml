@@ -24,7 +24,7 @@ jobs:
     - name: Publish VSCode extension
       run: |
         npm install 
-        npm install -g vsce
+        npm install -g @vscode/vsce
         vsce package
         vsce publish -p ${{ env.VSCODE_EXT_PUBLISH_TOKEN }}
 
