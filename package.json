@@ -14,6 +14,18 @@
   "categories": [
     "Snippets"
   ],
+  "icon": "media/img/pulumi-logo.png",
+  "keywords": [
+    "pulumi",
+    "IaC",
+    "snippets",
+    "typescript",
+    "javascript",
+    "automation",
+    "cloud",
+    "infrastructure",
+    "azure"
+  ],
   "contributes": {
     "snippets": [
       {
