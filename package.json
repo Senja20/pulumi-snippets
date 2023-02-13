@@ -2,7 +2,7 @@
   "name": "pulumi-snippets",
   "displayName": "Pulumi Snippets",
   "description": "Extension which provides the user with pre-build snippets of commonly used code for Pulumi. The extension is build for automating work process and propagate best practices for Pulumi scripts to improve quality of modern IaC scripts.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "YauhenYavorski",
   "repository": {
     "type": "git",
