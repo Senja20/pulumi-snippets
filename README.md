@@ -25,3 +25,4 @@ The extension provides extension for the most common Pulumi code. The snippets c
 
 ### Azure
 - puazp: pulumi azure provider
+- puazpi: pulumi azure provider with imports
