@@ -18,6 +18,8 @@ The extension provides extension for the most common Pulumi code. The snippets c
 ### Docker
 - pudci: pulumi add docker image
 - pudcii: pulumi add docker image with necessary imports
+- pudcc: pulumi add snippet for docker container.
+- pudcci: pulumi add snippet for docker container with imports.
 
 ### Azure
 - puazp: pulumi azure provider
